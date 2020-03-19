@@ -29,6 +29,10 @@ code {
   animation: Gradient 60s ease infinite;
 }
 
+.currentTime {
+  font-size: 1rem;
+}
+
 @-webkit-keyframes Gradient {
   0% {
     background-position: 0% 50%

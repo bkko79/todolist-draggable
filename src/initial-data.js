@@ -1,5 +1,6 @@
 const initialDatas = {
     input: '',
+    date: new Date().toLocaleString('ja-jp'),
     index: 5,
     tasks: {
         'task-1': {id: 'task-1', 'content': 'take out the garbage', 'checked': false, 'timer': ''},

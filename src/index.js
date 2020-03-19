@@ -19,6 +19,14 @@ const TodoWrapper = styled.div`
 class App extends React.Component {
   state = initialDatas;
 
+  componentDidMount(){
+      setInterval( () => {
+        this.setState({
+          date: new Date().toLocaleString('ja-jp')
+        })
+      }, 1000)
+  }
+
   handleChange = (e) => {
     this.setState({
       input: e.target.value
@@ -147,7 +155,10 @@ class App extends React.Component {
     const tasks = column.taskIds.map(taskId => this.state.tasks[taskId]);
     return (
       <TodoWrapper>
-        <div className="titleAnimation">My Todo</div>
+        <div className="titleAnimation">
+          My Todo
+          <p className="currentTime">{this.state.date}</p>
+        </div>
         <DragDropContext onDragEnd ={this.onDragEnd}>
           <div className="form-wrapper">
           <Form 
