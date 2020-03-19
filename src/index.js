@@ -13,7 +13,8 @@ const TodoWrapper = styled.div`
   background: white;
   max-width: 512px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  margin: 2rem auto;
+  margin: 0 auto;
+  margin-bottom: 2rem;
 `
 
 class App extends React.Component {

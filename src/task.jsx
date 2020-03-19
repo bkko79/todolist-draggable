@@ -11,7 +11,7 @@ const Container = styled.div`
 `;
 
 const Handle = styled.div`
-  width: 20px;
+  min-width: 20px;
   height: 20px;
   background-color: #22b8cf;
   border-radius: 10px;

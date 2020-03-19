@@ -5,11 +5,10 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import Task from './task';
 
 const Container = styled.div`
-  margin: 8px;
+  margin: 4px;
   border-radius: 2px;
 `;
 const TaskList =styled.div`
-  padding: 8px;
   background: ${props => (props.isDraggingOver ? 'white':'white')}
 `;
 
