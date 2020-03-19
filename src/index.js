@@ -145,7 +145,7 @@ class App extends React.Component {
       input: '',
       column: newColumn,
     }
-
+    console.log(newState);
     this.setState(newState);
   }
 
