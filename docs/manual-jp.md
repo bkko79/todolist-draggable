@@ -12,9 +12,9 @@ DEMO用のURLは下記になります:
 
 ## 環境デプロイーマニュアル
 
-この環境はreactのcreate-react-appとyarnを使って構築しました。(npm形も使えます。)
+この環境はreactのcreate-react-appとyarnを使って構築しました。(npmも使えます。)
 
-下記のコマンドの中で一つ選んでで必要なnode_modulesを該当ディレクトリーに設置させてください。
+下記のコマンドの中で一つ選んで必要なnode_modulesを該当ディレクトリーに設置させてください。
 
 ```shell
 yarn install
@@ -35,7 +35,7 @@ npm start
 ```shell
 Compiled successfully!
 
-You can now view todo-list2 in the browser.
+You can now view todo-list in the browser.
 
   Local:            http://localhost:3000
   On Your Network:  http://192.168.11.10:3000
@@ -46,7 +46,7 @@ To create a production build, use yarn build.
 
 ## ファイルツリー
 
-このアプリケーションはクラス形コンポネントで構築されています。
+このアプリケーションはクラスで構築されています。
 
 ```shell
 .
@@ -73,39 +73,39 @@ To create a production build, use yarn build.
 
 #### 1. index.js
 
-最初のreactDOMをRenderするファイルで、関数を管理する上位コンポネントです。
+最初にreactDOMをRenderするファイルで、stateを管理する関数を持つ上位コンポネントです。
 
 #### 2. column.jsx
 
-アプリケーションのコンテイナーとしてreact-beautiful-dndの上位コンポネント、CSSTransitionの上位コンポネントを持って、mapされたtaskたちのWrapperです。
+アプリケーションのコンテイナーとして、react-beautiful-dndの上位コンポネント、CSSTransitionの上位コンポネントを持って、mapされたtaskを庇うWrapperです。
 
 #### 3. form.jsx
 
-上位コンポネントに保存されているデーターstateに新しいTODOを追加するInput用フォームを管理するコンポネントです。
+上位コンポネントに保存されているstateに新しいTODOを追加するInput用フォームを管理するコンポネントです。
 
 #### 4. task.jsx
 
-各TODOオブジェクトを管理するコンポネントです。
+各TODOオブジェクトを管理するコンポネントで、dragイベントに必要なDraggableコンポネントと日付情報を記入するDatepickコンポネントを出力します。
 
 #### 5. datepick.jsx
 
-各TODOオブジェクトに日付を登録するカレンダーコンポネントです。
+各TODOオブジェクトに日付を登録するカレンダーコンポネントです。選択された日付情報をcallback関数で上位コンポネントへ伝えます。
 
 ## 重要モジュール
 
 ### 1. create-react-app
 
-nodeでテスト環境構築に必要なモジュールを管理するパッケージです。最初にウェブアプリケーション構築にこちらのテンプレートを利用しましたが、デフォルトのファイルを削除してもっと簡単な構造に改造しました。
+nodeでテスト環境構築に必要なモジュールを管理するパッケージです。デフォルトのファイルを削除してもっと簡単な構造に改造しました。
 
 ### 2. react-beautiful-dnd
 
 ほとんどのモバイルデバイスは、DOMにバインドされたドラッグイベントが効かないので、draggableなどのマウスのイベントとは違う別のスクリプトを作る工数が掛かります。
 
-react環境からモバイルdrag-and-dropを早めに導入するにはreact-nativeで構築する方法やreact-dndでモバイルブラウザーのアニメーションを追加する方法があります。
+react環境からモバイルdrag-and-dropを早めに導入するにはreact-nativeで構築する方法やreact-dnd等でモバイルブラウザー用イベントを強制に追加する方法があります。
 
-今回はclassコンポネントと良く合うreact-beautiful-dndを使って構築しました。react-beautiful-dndはTrelloのAttlasianが制作してモバイル支援し、プロダクションレベルにも利用されるモジュールです。
+今回はclassコンポネントと良く合うreact-beautiful-dndを使って構築しました。TrelloのAttlasianが制作した該当モジュールはモバイルのタッチを使ったdragイベントを支援して、プロダクションレベルにも利用されるモジュールです。
 
-重要なコンポネントはindex.jsのDragDropContext、column.jsxのDroppableとtask.jsxのDraggableです。各コンポネントはデフォルトref関数を指定してアニメーションを管理します。
+重要なコンポネントはindex.jsのDragDropContext、column.jsxのDroppableとtask.jsxのDraggableです。各コンポネントはref関数をあり、各アニメーションとイベントの結果を管理します。
 
 ### 3. react-transition-group
 
@@ -121,6 +121,6 @@ reactフレームワークMaterial-UIの時間選択関連モジュールpickers
 
 ### 5. styled-components
 
-ES6でCSSを作成するモジュールで、簡単にスタイル付きのコンポネントが制作できます。
+ES6でCSSを作成するモジュールで、簡単にスタイル付きのコンポネントが制作できます。SASSなどのスタイル管理ツールの機能が含まれて、React上のコンポネントに直接styleを宣言したり、条件式等を追加する事が出来ます。
 
-重要なモジュールはtask.jsxにあるContainerとHandle変数です。
+重要なモジュールはtask.jsxにあるContainerとHandle変数です。ほとんどの場合スタイルシートは別のファイルに分ける方が読み易いので、できる限り必要な部分だけコンポネントに追加しています。
