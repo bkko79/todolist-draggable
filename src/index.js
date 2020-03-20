@@ -87,7 +87,7 @@ class App extends React.Component {
   }
 
   handleRemove = (id) => {
-    const { tasks, column, index } = this.state;
+    const { tasks, column } = this.state;
     let newTasks = tasks;
     delete newTasks[id];
     const newTaskIds = Array.from(column.taskIds).filter(task => task !== id);
