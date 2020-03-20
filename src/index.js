@@ -93,7 +93,6 @@ class App extends React.Component {
     const newTaskIds = Array.from(column.taskIds).filter(task => task !== id);
     const newState = {
       ...this.state,
-      index: index - 1,
       tasks: newTasks,
       column: {
         ...column,
